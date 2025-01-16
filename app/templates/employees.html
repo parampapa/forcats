@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Employee List{% endblock %}
+
+{% block content %}
+<h1>Employee List</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Position</th>
+            <th>Birthday</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.department }}</td>
+            <td>{{ employee.position }}</td>
+            <td>{{ employee.birthday.strftime('%d.%m.%Y') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
